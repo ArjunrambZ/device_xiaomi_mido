@@ -16,7 +16,7 @@
 
 $(call inherit-product, device/xiaomi/mido/full_mido.mk)
 
-# Inherit some common aoscp stuff.
+# Inherit some common bootleggers stuff.
 $(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
 PRODUCT_NAME := bootleg_mido
@@ -25,7 +25,11 @@ BOARD_VENDOR := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="mido-user 7.0 NRD90M V8.5.4.0.NCFMIED release-keys"
+    BUILD_FINGERPRINT="xiaomi/mido/mido:7.0/NRD90M/V9.2.2.0.NCFMIEK:user/release-keys" \
+    DEVICE_MAINTAINERS="Vitor7810"
+
+# Set BTLG Build to Shishufied
+BOOTLEG_BUILD_TYPE := Shishufied
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "xiaomi/mido/mido:7.0/NRD90M/V8.5.4.0.NCFMIED:user/release-keys"
+BUILD_FINGERPRINT := "xiaomi/mido/mido:7.0/NRD90M/V9.2.2.0.NCFMIEK:user/release-keys"
